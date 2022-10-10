@@ -16,18 +16,21 @@
         <div class="metadata">Ecrit le {{ item.createdAt|date('d/m/Y à H:i:s') }} dans la catégorie Politique</div>
         {# date() est un filtre twig : il permet de convertir un objet en une chaine de caractéres#}
         <div class"content">
-        <img src="{{ item.image }}" alt="">
+        <img class="img-fluid" src="{{ item.image }}" alt="">
         {{ item.content|raw}}
         {# raw est un filtre permet d'interpreter les balises html #}
         <a href="{{ path('blog_show',{id: item.id}) }}" class="btn btn-primary">Lire la suite</a>
         {# path() génére un lien vers une page #}
         {# le 1er arg est le nom de la route (name=XXX) #}
         </div>
+        
     </article>
+     </section>
+           
 
 {% endfor %}
+ 
 
-</section>
 
 
 {% endblock %}

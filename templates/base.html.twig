@@ -26,7 +26,21 @@
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="{{ path('home')}}">Acueill</a>
         <a class="nav-link" href="{{ path('app_blog')}}">Liste des articles</a>
-        <a class="nav-link" href="{{ path('blog_create')}}">Nouvel article</a>   
+        <a class="nav-link" href="{{ path('blog_create')}}">Nouvel article</a>
+        
+        {% if app.user %}
+         <a class="nav-link" href="{{ path('blog_create')}}">Déconnexion</a>
+         {% else %}
+         <a class="nav-link" href="{{ path('app_login')}}">connexion</a>
+         <a class="nav-link" href="{{ path('app_register')}}">Création de compte</a> 
+        {% endif %}
+
+        {% if is_granted('ROLE_ADMIN') %}  
+        <a href="{{ path('admin') }}" class="nav-link" >BACKOFFICE</a>
+        {% endif %} 
+        
+        
+          
       </div>
     </div>
   </div>

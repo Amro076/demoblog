@@ -11,7 +11,10 @@
             <th>Modéle</th>
             <th>Déscription</th>
             <th>Prix</th>
+            <th>Type</th>
             <th>Editer</th>
+            <th>Supprimer</th>
+
         </tr>
 	</thead>
     <tbody>
@@ -21,6 +24,7 @@
             <td>{{ voiture.modele}}</td>
             <td>{{ voiture.description}}</td>
             <td>{{ voiture.prix}}</td>
+            <td>{{ voiture.type.titre}}</td>
             <td>
             <a class="btn btn-primary mt-2" href="{{ path('voiture_edit', {id: voiture.id}) }}">Ajouter</a>
             </td>
